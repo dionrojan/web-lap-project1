@@ -225,3 +225,8 @@ header nav ul li a:hover {
     opacity: 1;
     transform: scale(1) translateY(0);
 }
+
+/* A class that JavaScript will apply to hide filtered shoes */
+.hidden {
+    display: none !important;
+}

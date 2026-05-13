@@ -14,8 +14,10 @@
         <div class="logo">ShoeStore</div>
         <nav>
             <ul>
-                <li><a href="#men">Men</a></li>
-                <li><a href="#women">Women</a></li>
+                <!-- Notice the new classes and data-filter attributes -->
+                <li><a href="#" class="filter-btn" data-filter="all">All</a></li>
+                <li><a href="#" class="filter-btn" data-filter="men">Men</a></li>
+                <li><a href="#" class="filter-btn" data-filter="women">Women</a></li>
                 <li><a href="index.html">Logout</a></li>
             </ul>
         </nav>
@@ -29,7 +31,7 @@
         <div class="product-grid">
             
             <!-- Card 1 (Notice the 'pop-on-scroll' class for the animation) -->
-            <article class="product-card pop-on-scroll">
+            <article class="product-card pop-on-scroll" data-category="women">
                 <img src="static/images/shoeimge1.jpg" alt="Shoe 1">
                 <h3>Urban Runner</h3>
                 <p>$120.00</p>
@@ -37,7 +39,7 @@
             </article>
 
             <!-- Card 2 -->
-            <article class="product-card pop-on-scroll">
+            <article class="product-card pop-on-scroll" data-category="men">
                 <img src="static/images/shoeimage2.webp" alt="Shoe 2">
                 <h3>Classic Comfort</h3>
                 <p>$95.00</p>
@@ -45,7 +47,7 @@
             </article>
 
             <!-- Card 3 -->
-            <article class="product-card pop-on-scroll">
+            <article class="product-card pop-on-scroll" data-category="men">
                 <img src="static/images/shoeimage3.webp" alt="Shoe 3">
                 <h3>Sport Pro Flex</h3>
                 <p>$150.00</p>
@@ -53,15 +55,15 @@
             </article>
 
             <!-- Card 4 -->
-            <article class="product-card pop-on-scroll">
-                <img src="static/images/shoeimge1.jpg" alt="Shoe 4">
+            <article class="product-card pop-on-scroll" data-category="men">
+                <img src="static/images/shoeimage4.webp" alt="Shoe 4">
                 <h3>Street Style</h3>
                 <p>$110.00</p>
                 <button class="cta-button">Add to Cart</button>
             </article>
 
             <!-- Card 5 -->
-            <article class="product-card pop-on-scroll">
+            <article class="product-card pop-on-scroll" data-category="men">
                 <!-- Watch the extensions carefully! Some are .jpeg and some are .jpg -->
                 <img src="static/images/shoeimage4.webp" alt="Shoe 5">
                 <h3>Trail Blazer</h3>
@@ -70,7 +72,7 @@
             </article>
 
             <!-- Card 6 -->
-            <article class="product-card pop-on-scroll">
+            <article class="product-card pop-on-scroll" data-category="men">
                 <img src="static/images/shoeimage5.jpeg" alt="Shoe 6">
                 <h3>Night Shift</h3>
                 <p>$105.00</p>
@@ -78,7 +80,7 @@
             </article>
 
             <!-- Card 7 -->
-            <article class="product-card pop-on-scroll">
+            <article class="product-card pop-on-scroll" data-category="men">
                 <img src="static/images/shoeimage6.jpeg" alt="Shoe 7">
                 <h3>Aero Sprint</h3>
                 <p>$140.00</p>
@@ -86,7 +88,7 @@
             </article>
 
             <!-- Card 8 -->
-            <article class="product-card pop-on-scroll">
+            <article class="product-card pop-on-scroll" data-category="men">
                 <img src="static/images/shoeimage7.jpeg" alt="Shoe 8">
                 <h3>Neon Rush</h3>
                 <p>$125.00</p>
@@ -94,7 +96,7 @@
             </article>
 
             <!-- Card 9 -->
-            <article class="product-card pop-on-scroll">
+            <article class="product-card pop-on-scroll" data-category="women">
                 <img src="static/images/shoeimage8.jpg" alt="Shoe 9">
                 <h3>Velocity X</h3>
                 <p>$160.00</p>
@@ -102,7 +104,7 @@
             </article>
 
             <!-- Card 10 -->
-            <article class="product-card pop-on-scroll">
+            <article class="product-card pop-on-scroll" data-category="women">
                 <img src="static/images/shoeimage9.jpg" alt="Shoe 10">
                 <h3>Retro Kick</h3>
                 <p>$85.00</p>
@@ -110,7 +112,7 @@
             </article>
 
             <!-- Card 11 -->
-            <article class="product-card pop-on-scroll">
+            <article class="product-card pop-on-scroll" data-category="women">
                 <img src="static/images/shoeimage10.jpg" alt="Shoe 10">
                 <h3>Pink Kick</h3>
                 <p>$85.00</p>
@@ -118,7 +120,7 @@
             </article>
 
             <!-- Card 12 -->
-            <article class="product-card pop-on-scroll">
+           <article class="product-card pop-on-scroll" data-category="women">
                 <img src="static/images/shoeimage11.webp" alt="Shoe 10">
                 <h3>Retro love</h3>
                 <p>$85.00</p>
@@ -130,22 +132,9 @@
         </div>
     </main>
 
-    <!-- This script detects when you scroll down and triggers the pop animation -->
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                // If the user scrolls down to the shoe card, add the 'is-visible' class
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                }
-            });
-        }, { threshold: 0.1 }); // Triggers when 10% of the card is visible
 
-        // Grab all 4 shoe cards and watch them for scrolling
-        const popElements = document.querySelectorAll('.pop-on-scroll');
-        popElements.forEach((el) => observer.observe(el));
-    </script>
-</body>
+    <!-- Link to your new external JS file -->
+        <script src="static/script.js"></script></body>
 </html>    <section class="product-hero">
         <h1>New Arrivals</h1>
     </section>
