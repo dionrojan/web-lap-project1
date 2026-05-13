@@ -188,8 +188,8 @@ header nav ul li a:hover {
     display: grid;
     /* This creates exactly 4 equal columns for your 4 images */
     grid-template-columns: repeat(4, 1fr); 
-    gap: 30px;
-    max-width: 1200px;
+    gap: 40px;
+    max-width: 90%;
     margin: 0 auto; /* Centers the grid on the page */
 }
 
@@ -204,7 +204,7 @@ header nav ul li a:hover {
 
 .product-card img {
     width: 100%;
-    height: 220px;
+    height: 300px;
     object-fit: cover; /* Ensures images don't stretch weirdly */
     border-radius: 8px;
     margin-bottom: 15px;
