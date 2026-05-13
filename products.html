@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <!-- Links to your shared CSS file -->
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+
+    <!-- Header: We added a new class 'product-header' so we can make it black & semi-transparent -->
+    <header class="product-header">
+        <div class="logo">ShoeStore</div>
+        <nav>
+            <ul>
+                <li><a href="#men">Men</a></li>
+                <li><a href="#women">Women</a></li>
+                <li><a href="index.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Top Background Image Section (So the transparent header has something to float over) -->
+    <section class="product-hero"></section>
+
+    <!-- Main Product Grid -->
+    <main class="product-container">
+        <div class="product-grid">
+            
+            <!-- Card 1 (Notice the 'pop-on-scroll' class for the animation) -->
+            <article class="product-card pop-on-scroll">
+                <img src="static/images/shoeimge1.jpg" alt="Shoe 1">
+                <h3>Urban Runner</h3>
+                <p>$120.00</p>
+                <button class="cta-button">Add to Cart</button>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="product-card pop-on-scroll">
+                <img src="static/images/shoeimage2.webp" alt="Shoe 2">
+                <h3>Classic Comfort</h3>
+                <p>$95.00</p>
+                <button class="cta-button">Add to Cart</button>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="product-card pop-on-scroll">
+                <img src="static/images/shoeimage3.webp" alt="Shoe 3">
+                <h3>Sport Pro Flex</h3>
+                <p>$150.00</p>
+                <button class="cta-button">Add to Cart</button>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="product-card pop-on-scroll">
+                <img src="static/images/shoeimge1.jpg" alt="Shoe 4">
+                <h3>Street Style</h3>
+                <p>$110.00</p>
+                <button class="cta-button">Add to Cart</button>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- This script detects when you scroll down and triggers the pop animation -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                // If the user scrolls down to the shoe card, add the 'is-visible' class
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.1 }); // Triggers when 10% of the card is visible
+
+        // Grab all 4 shoe cards and watch them for scrolling
+        const popElements = document.querySelectorAll('.pop-on-scroll');
+        popElements.forEach((el) => observer.observe(el));
+    </script>
+</body>
+</html>    <section class="product-hero">
+        <h1>New Arrivals</h1>
+    </section>

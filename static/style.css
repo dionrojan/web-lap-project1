@@ -1,0 +1,227 @@
+/* =========================================
+   1. GLOBAL STYLES & RESETS
+   ========================================= */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* =========================================
+   2. HEADER & NAVIGATION
+   ========================================= */
+/* 1. Make the whole header overlay the background section */
+header {
+    position: absolute; /* Floats the header over the background */
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box; /* MAGIC FIX: Stops padding from breaking the width */
+    display: flex;
+    justify-content: space-between; /* Pushes Logo to the far left, Buttons to the far right */
+    align-items: center; /* Centers them vertically */
+    padding: 20px 40px; /* Space from the edges of the screen */
+    background: transparent; /* Forces the header to have NO background color */
+    z-index: 10;
+}
+
+/* --- Blurry Logo Box --- */
+.logo {
+    font-size: 2.5rem;
+    font-weight: 800;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', sans-serif;
+    color: #8a2be2; /* CHANGED: Back to your vibrant plasma purple! */
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.15); 
+    border-radius: 12px;
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+}
+
+/* --- Navigation Bar & Buttons --- */
+nav ul {
+    list-style: none; 
+    display: flex; 
+    gap: 15px; 
+    margin: 0;
+    padding: 0;
+}
+
+/* Applied 'header' here so it only affects the top bar */
+header nav ul li a {
+    text-decoration: none; 
+    background-color: black; 
+    color: white; 
+    padding: 10px 24px; 
+    border-radius: 8px; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    font-weight: 600; 
+    font-size: 1.1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Adds the shadow underneath */
+    transition: background-color 0.3s ease, transform 0.2s; 
+}
+
+header nav ul li a:hover {
+    background-color: #8a2be2; 
+    transform: translateY(-2px); 
+}
+
+/* =========================================
+   3. HERO BANNER & BACKGROUNDS
+   ========================================= */
+.hero-banner {
+    position: relative;
+    height: 100vh; /* 100vh (full viewport height) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: -100px; /* Pushes the entire section right up to the top of the viewport */
+    z-index: 1; /* Pushes the section to the top layering-wise */
+}
+
+/* --- The Three-Panel Background --- */
+.hero-backgrounds {
+    position: absolute; /* Takes it out of document flow */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex; /* Lines up the panels side-by-side */
+    z-index: -1; /* Pushes the backgrounds behind the text */
+}
+
+.bg-panel {
+    flex: 1; /* Forces all three panels to take up exactly 33.3% of the width */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Applying the Images and White Tint (rgba(255,255,255,0.6) = white with 60% opacity) */
+.panel-1 {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('images/shoeimge1.jpg');
+}
+
+.panel-2 {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('images/shoeimage2.webp');
+}
+
+.panel-3 {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('images/shoeimage3.webp');
+}
+
+/* =========================================
+   4. HERO CONTENT & CALL TO ACTION
+   ========================================= */
+/* --- Foreground Text Styling --- */
+.hero-content {
+    text-align: center;
+    z-index: 1; /* Ensures text stays on top of the background */
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.8); /* A slight white box behind the text to improve readability */
+    border-radius: 12px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 24px;
+    background-color: #222;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #555;
+}
+/* =========================================
+   5. PRODUCT PAGE STYLES
+   ========================================= */
+
+/* --- Semi-Transparent Black Header --- */
+.product-header {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    position: fixed; /* Keeps it locked at the top of the screen when scrolling */
+}
+
+/* --- Background Image Banner --- */
+.product-hero {
+    height: 70vh; /* Takes up 70% of the screen height */
+    /* Points to one of your existing images to act as a background */
+    background-image: url('images/prd_back_image2.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Creates a cool parallax effect when scrolling */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-hero h1 {
+    color: white;
+    font-size: 4rem;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+    font-family: 'Segoe UI', sans-serif;
+    margin-top: 50px;
+}
+
+/* --- Product Layout & Grid --- */
+.product-container {
+    padding: 80px 40px;
+    background-color: #f4f4f4; /* Slightly grey background to make cards pop out */
+}
+
+.product-grid {
+    display: grid;
+    /* This creates exactly 4 equal columns for your 4 images */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto; /* Centers the grid on the page */
+}
+
+/* --- Individual Shoe Card --- */
+.product-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover; /* Ensures images don't stretch weirdly */
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* --- Scroll Pop Animation Mechanics --- */
+
+/* 1. Starting state (Hidden, pushed down a bit, and slightly shrunken) */
+.pop-on-scroll {
+    opacity: 0;
+    transform: scale(0.8) translateY(50px);
+    /* 'cubic-bezier' is what gives it that bouncy, popping effect */
+    transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* 2. Ending state (The JavaScript adds this class when you scroll down) */
+.pop-on-scroll.is-visible {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
