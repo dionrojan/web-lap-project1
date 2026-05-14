@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - ShoeStore</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body style="background-color: #f4f4f4;"> <!-- Keep background grey -->
+
+    <header class="product-header" style="position: relative; background: #1a1a1a;">
+        <div class="logo">ShoeStore</div>
+        <nav>
+            <ul>
+                <li><a href="products.html">Back to Shopping</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="cart-container">
+        <h1>Your Shopping Cart</h1>
+        
+        <!-- JavaScript will inject the shoes inside this empty div -->
+        <div id="cart-items-container"></div>
+        
+        <!-- The summary box -->
+        <div class="cart-summary">
+            <h3>Grand Total: $<span id="cart-total">0.00</span></h3>
+            <button class="cta-button" onclick="alert('Checkout coming soon!')">Proceed to Checkout</button>
+        </div>
+    </main>
+
+    <!-- Link to a brand NEW script file just for the cart -->
+    <script src="static/cart.js"></script>
+</body>
+</html>

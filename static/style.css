@@ -161,7 +161,7 @@ header nav ul li a:hover {
 .product-hero {
     height: 70vh; /* Takes up 70% of the screen height */
     /* Points to one of your existing images to act as a background */
-    background-image: url('images/prd_back_image2.jpg'); 
+    background-image: url('images/prd_back_image1.jpg'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Creates a cool parallax effect when scrolling */
@@ -229,4 +229,67 @@ header nav ul li a:hover {
 /* A class that JavaScript will apply to hide filtered shoes */
 .hidden {
     display: none !important;
+}
+
+/* =========================================
+   6. CART PAGE STYLES
+   ========================================= */
+.cart-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.cart-details {
+    flex: 2;
+    padding-left: 20px;
+}
+
+.cart-actions {
+    flex: 1;
+    text-align: center;
+}
+
+.remove-btn {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    background-color: #cc0000;
+}
+
+.cart-item-total {
+    flex: 1;
+    text-align: right;
+    font-size: 1.2rem;
+}
+
+.cart-summary {
+    margin-top: 30px;
+    text-align: right;
+    padding-top: 20px;
+    border-top: 3px solid #333;
 }
